@@ -1,0 +1,70 @@
+#1
+user_name = input("Enter your name: ")
+name = " "
+
+for x in range(len(user_name)):
+    char = user_name[x]
+    if char == "A":
+        name += "1"
+    elif char == "B":
+        name += "2"
+    elif char == "C":
+        name += "3"
+    elif char == "D":
+        name += "4"
+    elif char == "E":
+        name += "5"
+    elif char == "F":
+        name += "6"
+    elif char == "G":
+        name += "7"
+    elif char == "H":
+        name += "8"
+    elif char == "I":
+        name += "9"
+    elif char == "J":
+        name += "10"
+    elif char == "K":
+        name += "11"
+    elif char == "L":
+        name += "12"
+    elif char == "M":
+        name += "13"
+    elif char == "N":
+        name += "14"
+    elif char == "O":
+        name += "15"
+    elif char == "P":
+        name += "16"
+    elif char == "Q":
+        name += "17"
+    elif char == "R":
+        name += "18"
+    elif char == "S":
+        name += "19"
+    elif char == "T":
+        name += "20"
+    elif char == "U":
+        name += "21"
+    elif char == "V":
+        name += "22"
+    elif char == "W":
+        name += "23"
+    elif char == "X":
+        name += "24"
+    elif char == "Y":
+        name += "25"
+    elif char == "Z":
+        name += "26"
+    else:
+        user_name + name
+print(name)
+
+
+
+
+
+
+
+
+
