@@ -1,0 +1,11 @@
+public class Fish2 {
+    boolean can_walk(){
+        return false;
+    }
+    boolean can_swim(){
+        return true;
+    }
+    boolean can_fly(){
+        return false;
+    }
+}
