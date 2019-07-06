@@ -1,0 +1,41 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package joel;
+
+/**
+ *
+ * @author LAB3
+ */
+public class StringAnimals_Joel {
+    public static void main(String[] args){
+    System.out.println("Animal List: ");
+    
+    String[] animals = {"Lion","Tiger","Leopard","Cheetah","Puma"};
+    int[] myArr = {-1,-2,3,0,5,6,7,9,10,11,13,15,-10,-14,4};
+    int myArray;
+    for(int a = 4; a >= 0; a--){
+    
+    System.out.println(animals[a]);
+    }
+    System.out.println();
+    System.out.println("Numbers List: ");
+    for(int b = 1; b < myArr.length; b++){
+        for(int c = b; c > 0; c--){
+            if(myArr[c] > myArr[c - 1]){
+            myArray = myArr[c];
+            myArr[c] = myArr[c - 1];
+            myArr[c - 1] = myArray;
+        }
+        }
+        
+    }
+    for(int b = 0; b < myArr.length; b++){
+        System.out.println(myArr[b]);
+    }
+ 
+    
+}
+}
