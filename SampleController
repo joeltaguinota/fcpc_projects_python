@@ -1,0 +1,108 @@
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Iterator;
+
+public class Controller{
+	public static void main(String[] args) throws IOException{
+		BufferedReader read = new BufferedReader(new InputStreamReader(System.in));
+		ArrayList  list = new ArrayList();
+		Employee emp = new Employee();
+		Salary sal = new Salary();
+		Report rep = new Report(emp, sal);
+		Boolean loop = true;
+		String option;
+		
+		
+		while(loop != false) {
+			System.out.println("\t Selection Option: \n"+
+					"---------------------------------\n"+
+					"[1] - Add Record\n"+
+					"[2] - Remove Record\n"+
+					"[3] - View Records\n"+
+					"[4] - Exit\n"+
+					"---------------------------------");
+			System.out.println("Choice: ");
+		try {
+			option = read.readLine();
+			int choice = Integer.parseInt(option);
+			
+			switch(choice) {
+				case 1:
+						System.out.println("EMPLOYEE INFO: ");
+						System.out.println("---------------------------------");
+						System.out.println("Enter First Name: ");
+						String fname = read.readLine();
+						emp.setFNAME(fname);
+						System.out.println("Enter Middle Name: ");
+						String mname = read.readLine();
+						emp.setMNAME(mname);
+						System.out.println("Enter Last Name: ");
+						String lname = read.readLine();
+						emp.setLNAME(lname);
+						System.out.println("Enter Age: ");
+						String age = read.readLine();
+						emp.setAGE(age);
+						System.out.println("Enter Gender: ");
+						String gender = read.readLine();
+						emp.setGENDER(gender);
+						System.out.println("Enter Position: ");
+						String position = read.readLine();
+						emp.setPOSITION(position);
+						System.out.println("EMPLOYEE SALARY INFO: ");
+						System.out.println("---------------------------------");
+						System.out.println("Enter Tax: ");
+						String thistax = read.readLine();
+						double tax = Double.parseDouble(thistax);
+						sal.setTAX(tax);
+						System.out.println("Enter Deduction Rate: ");
+						String thisdr = read.readLine();
+						double deductionrate = Double.parseDouble(thisdr);
+						sal.setDEDUCTIONRATE(deductionrate);
+						System.out.println("Enter Final Rate: ");
+						String thisfr = read.readLine();
+						double finalrate = Double.parseDouble(thisfr);
+						sal.setFINALRATE(finalrate);
+						break;
+				case 2:
+                                                System.out.println("Record List");
+					
+					        Iterator previewList = list.iterator();
+					        while(previewList.hasNext()) {
+						System.out.println(previewList.next());
+						
+					}
+					
+					        System.out.println("------------------------");
+					        System.out.println("Insert a name that you want to remove: ");
+                                                String removetoRecord = read.readLine();
+					        list.remove(removetoRecord);
+					
+					        System.out.println("You removed: "+removetoRecord);
+					        System.out.println();
+					        break;
+						
+				case 3:
+					        System.out.println("Record List");
+					        Iterator viewList = list.iterator();
+					        while(viewList.hasNext()) {
+						System.out.println(viewList.next());
+					}
+					        System.out.println();
+					        break;	
+					
+		}
+                                                if(choice == 4) {
+					        loop = false;
+			
+                        }
+		}catch(NumberFormatException e) {
+			System.out.println("Error! Input a valid option: ");
+		}
+		
+		}
+		
+		
+	}
+}
