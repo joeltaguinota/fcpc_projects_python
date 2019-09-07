@@ -1,0 +1,51 @@
+package com.company;
+
+import java.util.Scanner;
+import java.util.LinkedList;
+
+public class College {
+    public static void main(String[] args){
+        LinkedList<String> array = new LinkedList<String>();
+        Scanner input = new Scanner(System.in);
+
+        boolean running = true;
+        while(running){
+
+            System.out.println("[1]Add \n[2]Print \n[3]Exit");
+            System.out.print("Select: ");
+            String choice = input.next();
+
+            switch(choice){
+                case "1":
+                    System.out.print("Name: ");
+                    String name = input.next();
+                    array.add(name);
+
+                    System.out.print("Age: ");
+                    String age = input.next();
+                    array.add(age);
+
+                    System.out.print("Gender: ");
+                    String gender = input.next();
+                    array.add(gender);
+
+                    System.out.print("Address: ");
+                    String address = input.next();
+                    array.add(address);
+                    break;
+
+                case "2":
+                    System.out.println(array);
+                    break;
+
+                case "3":
+                    running = false;
+                    break;
+
+                default:
+                    System.out.println("Invalid choice!");
+            }
+        }
+
+    }
+}
