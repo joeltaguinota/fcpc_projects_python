@@ -1,0 +1,78 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import javax.swing.*;
+/**
+ *
+ * @author LAB3
+ */
+public class DemoVendingMachine {
+    private static final double winterMelon = 110.00;
+    private static final double chocolate = 135.00;
+    
+    
+    public static void main(String[] args){
+        JFrame frame = new JFrame("Demo Vending Machine");
+        JComboBox cboSizes = new JComboBox();
+        JCheckBox jcbWinterMelon = new JCheckBox("Winter Melon - Php 110.00");
+        JCheckBox jcbChocolate = new JCheckBox("Chocolate - Php 135.00");
+        JButton btnOrder = new JButton("Order");
+        JButton btnDelete = new JButton("Delete");
+        JTable tblOrderList = new JTable();
+        JScrollPane jsScrollPane = new JScrollPane(tblOrderList);
+        JLabel lblTotal = new JLabel("Total: 0.00");
+        
+       
+        
+        cboSizes.setBounds(10, 10, 250, 35);
+        jcbWinterMelon.setBounds(10, 50, 250, 35);
+        jcbChocolate.setBounds(10, 85, 250, 35);
+        btnOrder.setBounds(10, 125, 250, 35);
+        tblOrderList.setBounds(10, 125, 250, 35);
+        btnDelete.setBounds(230, 125, 250, 35);
+        jsScrollPane.setBounds(10, 185, 470, 250);
+        lblTotal.setBounds(10, 430, 200, 35);
+        
+        String sizes[] = new String[] {"Small", "Medium", "Large", "Venti"};
+        cboSizes.setModel(new DefaultComboBoxModel(sizes));
+        
+        
+        
+       
+        
+        
+        frame.add(lblTotal);
+        frame.add(cboSizes);
+        frame.add(jcbWinterMelon);
+        frame.add(jcbChocolate);
+        frame.add(btnOrder);
+        frame.add(btnDelete);
+        frame.add(jsScrollPane);
+        
+        
+        btnOrder.addActionListener(new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent ae){
+                String size = cboSizes.getSelectedItem().toString();
+                System.out.println(size);
+            }
+        
+        });
+        
+        
+        
+         
+        frame.setSize(500, 500);
+        frame.setLayout(null);
+        frame.setResizable(false);
+        frame.setVisible(true);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        
+    }
+    
+}
